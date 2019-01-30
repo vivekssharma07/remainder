@@ -5,6 +5,7 @@ $username = $host["user"] ?? null;
 $password = $host["pass"] ?? null;
 $port = $host["port"] ?? null ;
 $databse  = substr($url["path"],1) ?? null;
+
 return [
 
     /*
@@ -99,11 +100,11 @@ return [
 
         'prod_mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => $host,
-            'port'     => $port,
-            'database' => $databse,
-            'username' => $username,
-            'password' => $password,
+            'host'     => env('MONGO_DB_HOST', 'ds117145.mlab.com'),
+            'port'     => env('MONGO_DB_PORT', 17145),
+            'database' => env('MONGO_DB_DATABASE','root'),
+            'username' => env('MONGO_DB_USERNAME','vivekssharma07'),
+            'password' => env('MONGO_DB_PASSWORD','Vivek07$'),
             'options'  => []
         ],
 
