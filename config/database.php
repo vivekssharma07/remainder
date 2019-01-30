@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mongodb'),
+    'default' => env('DB_CONNECTION', 'prod_mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -93,6 +93,16 @@ return [
             'database' => env('MONGO_DB_DATABASE','taskrem'),
             'username' => env('MONGO_DB_USERNAME'),
             'password' => env('MONGO_DB_PASSWORD'),
+            'options'  => []
+        ],
+
+        'prod_mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => $host,
+            'port'     => env('MONGO_DB_PORT', 27017),
+            'database' => $databse,
+            'username' => $username,
+            'password' => $password,
             'options'  => []
         ],
 
