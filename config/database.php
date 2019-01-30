@@ -3,6 +3,7 @@ $url = parse_url(getenv("MONGODB_URI"));
 $host = $host["host"] ?? null;
 $username = $host["user"] ?? null;
 $password = $host["pass"] ?? null;
+$port = $host["port"] ?? null ;
 $databse  = substr($url["path"],1) ?? null;
 return [
 
@@ -99,7 +100,7 @@ return [
         'prod_mongodb' => [
             'driver'   => 'mongodb',
             'host'     => $host,
-            'port'     => env('MONGO_DB_PORT', 27017),
+            'port'     => $port,
             'database' => $databse,
             'username' => $username,
             'password' => $password,
