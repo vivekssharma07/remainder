@@ -100,11 +100,11 @@ return [
 
         'prod_mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => env('MONGO_DB_HOST', 'ds012345.mlab.com'),
-            'port'     => env('MONGO_DB_PORT', 56789),
-            'database' => 'root',
-            'username' => 'vivekssharma07',
-            'password' => 'Vivek07$',
+            'host'     => $host,
+            'port'     => $port,
+            'database' => $databse,
+            'username' => $username,
+            'password' => $password,
             'options'  => []
         ],
 
