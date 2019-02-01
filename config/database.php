@@ -1,10 +1,10 @@
 <?php
-$url = parse_url(getenv("MONGODB_URI"));
-$host = $host["host"] ?? null;
-$username = $host["user"] ?? null;
-$password = $host["pass"] ?? null;
-$port = $host["port"] ?? null ;
-$databse  = substr($url["path"],1) ?? null;
+$dbopts = parse_url(getenv('DATABASE_URL'));
+$host = $dbopts["host"] ?? null;
+$username = $dbopts["user"] ?? null;
+$password = $dbopts["pass"] ?? null;
+$port = $dbopts["port"] ?? null ;
+$databse  = ltrim($dbopts["path"],'/') ?? null;
 
 return [
 
@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => 'prod_mongodb',
+    'default' => 'prod_mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -98,16 +98,20 @@ return [
             'options'  => []
         ],
 
-        'prod_mongodb' => [
-            'driver'   => 'mongodb',
-            'host'     => env('MONGO_DB_HOST', 'ds117145.mlab.com:17145'),
-            'port'     => env('MONGO_DB_PORT', 27017),
-            'database' => env('MONGO_DB_DATABASE','taskrem'),
-            'username' => env('MONGO_DB_USERNAME','root'),
-            'password' => env('MONGO_DB_PASSWORD','siam1dacam'),
-            'options' => [
-                'database' =>  env('DB_DATABASE')
-            ]
+        'prod_mysql' => [
+            'driver' => 'mysql',
+            'host' => $host,
+            'port' => $port,
+            'database' => $databse,
+            'username' => $username,
+            'password' => $password,
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
         ],
     ],
 
