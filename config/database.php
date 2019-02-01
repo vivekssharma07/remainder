@@ -1,5 +1,5 @@
 <?php
-$dbopts = parse_url(getenv('DATABASE_URL'));
+$dbopts = parse_url(getenv('MONGODB_URI'));
 $host = $dbopts["host"] ?? null;
 $username = $dbopts["user"] ?? null;
 $password = $dbopts["pass"] ?? null;
