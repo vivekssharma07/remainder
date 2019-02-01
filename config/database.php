@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'prod_mongodb'),
+    'default' => 'prod_mongodb',
 
     /*
     |--------------------------------------------------------------------------
