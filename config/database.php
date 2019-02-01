@@ -102,9 +102,9 @@ return [
             'driver'   => 'mongodb',
             'host'     => env('MONGO_DB_HOST', 'ds117145.mlab.com:17145'),
             'port'     => env('MONGO_DB_PORT', 27017),
-            'database' => env('MONGO_DB_DATABASE','root'),
-            'username' => env('MONGO_DB_USERNAME','vivekssharma07'),
-            'password' => env('MONGO_DB_PASSWORD','Vivek07$'),
+            'database' => env('MONGO_DB_DATABASE','taskrem'),
+            'username' => env('MONGO_DB_USERNAME','admin'),
+            'password' => env('MONGO_DB_PASSWORD','siam123'),
             'options'  => []
         ],
     ],
