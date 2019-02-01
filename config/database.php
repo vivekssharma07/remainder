@@ -103,8 +103,8 @@ return [
             'host'     => env('MONGO_DB_HOST', 'ds117145.mlab.com:17145'),
             'port'     => env('MONGO_DB_PORT', 27017),
             'database' => env('MONGO_DB_DATABASE','taskrem'),
-            'username' => env('MONGO_DB_USERNAME','root'),
-            'password' => env('MONGO_DB_PASSWORD','siam1dacam'),
+            //'username' => env('MONGO_DB_USERNAME','root'),
+            //'password' => env('MONGO_DB_PASSWORD','siam1dacam'),
             'options'  => []
         ],
     ],
