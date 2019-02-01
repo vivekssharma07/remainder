@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => 'prod_mysql',
+    'default' => 'prod_mongodb',
 
     /*
     |--------------------------------------------------------------------------
@@ -98,20 +98,14 @@ return [
             'options'  => []
         ],
 
-        'prod_mysql' => [
-            'driver' => 'mysql',
+        'prod_mongodb' => [
+            'driver' => 'mongodb',
             'host' => $host,
             'port' => $port,
             'database' => $databse,
             'username' => $username,
             'password' => $password,
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
+            'options'  => []
         ],
     ],
 
